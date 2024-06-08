@@ -2,6 +2,7 @@ from fastapi import APIRouter, Response
 
 router = APIRouter()
 
+
 @router.get("/csv")
 async def get_csv():
     content = "id,name\n1,John\n2,Doe"

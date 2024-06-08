@@ -1,8 +1,7 @@
 from fastapi import FastAPI
+from src.routers import hello, csv
 
 app = FastAPI()
 
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+app.include_router(hello.router)
+app.include_router(csv.router)

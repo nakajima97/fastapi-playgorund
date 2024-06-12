@@ -13,6 +13,7 @@ sqlalchemy = "^2.0.30"
 pymysql = "^1.1.1"
 ruff = "^0.4.8"
 pytest = "^8.2.2"
+faker = "^25.8.0"
 
 
 [build-system]

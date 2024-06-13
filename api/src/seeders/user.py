@@ -8,6 +8,7 @@ from .company import company_count
 # fakerインスタンスを作成します
 fake = Faker("jp-JP")
 
+
 def user_seeder():
     # SQLAlchemy sessionを作成します
     with Session(db_engine) as session:
@@ -15,8 +16,7 @@ def user_seeder():
         for _ in range(100):
             # ダミーデータを生成します
             fake_user = User(
-                name=fake.name(),
-                company_id=fake.random_int(min=1, max=company_count)
+                name=fake.name(), company_id=fake.random_int(min=1, max=company_count)
             )
 
             # データをテーブルに挿入します

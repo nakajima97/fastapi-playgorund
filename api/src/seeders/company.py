@@ -8,6 +8,7 @@ faker = Faker("jp-JP")
 
 company_count = 10
 
+
 def company_seeder():
     # SQLAlchemy sessionを作成します
     with Session(db_engine) as session:
@@ -15,7 +16,7 @@ def company_seeder():
         for _ in range(company_count):
             # ダミーデータを生成します
             fake_company = Company(
-                name=faker.company() # ダミーテキストを生成します
+                name=faker.company()  # ダミーテキストを生成します
             )
 
             # データをテーブルに挿入します

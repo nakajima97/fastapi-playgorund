@@ -2,7 +2,7 @@ from sqlalchemy import select, func
 from sqlalchemy.orm import Session
 from sqlalchemy.engine import Result
 
-from src.models.memo import memo as memo_model
+from src.models.memo import Memo as memo_model
 
 
 def fetch_memo(db: Session, limit: int = 10, offset: int = 0):

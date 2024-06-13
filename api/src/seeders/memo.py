@@ -4,7 +4,7 @@ from src.models.memo import Memo
 from src.db import db_engine
 
 # fakerインスタンスを作成します
-fake = Faker('jp-JP')
+fake = Faker("jp-JP")
 
 # SQLAlchemy sessionを作成します
 with Session(db_engine) as session:

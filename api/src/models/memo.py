@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, Text
 
 from src.db import Base
 
+
 class memo(Base):
     __tablename__ = "memo"
 

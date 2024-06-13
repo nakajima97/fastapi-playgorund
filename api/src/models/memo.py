@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, Text
 
 from src.db import Base
 
-class Memo(Base):
+class memo(Base):
     __tablename__ = "memo"
 
     id = Column(Integer, primary_key=True, index=True)

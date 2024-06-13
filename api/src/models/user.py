@@ -9,6 +9,3 @@ class User(Base):
   id = Column(Integer, primary_key=True, index=True)
   company_id = Column(Integer, ForeignKey("companies.id"))
   name = Column(String(255))
-
-  # SQLAlchemyのORMレベルでのリレーションを定義する
-  company = relationship("Company", back_populates="users")

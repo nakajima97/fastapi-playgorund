@@ -1,24 +1,26 @@
 from sqlalchemy.orm import Session
 from faker import Faker
-from src.models.memo import Memo
+from src.models.company import Company
 from src.db import db_engine
 
 # fakerインスタンスを作成します
-fake = Faker("jp-JP")
+faker = Faker("jp-JP")
+
+company_count = 10
 
 
-def memo_seeder():
+def company_seeder():
     # SQLAlchemy sessionを作成します
     with Session(db_engine) as session:
         # 100回ループします
-        for _ in range(100):
+        for _ in range(company_count):
             # ダミーデータを生成します
-            fake_memo = Memo(
-                content=fake.text()  # ダミーテキストを生成します
+            fake_company = Company(
+                name=faker.company()  # ダミーテキストを生成します
             )
 
             # データをテーブルに挿入します
-            session.add(fake_memo)
+            session.add(fake_company)
 
         # 変更をコミットします
         session.commit()

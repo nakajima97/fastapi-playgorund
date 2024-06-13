@@ -10,3 +10,9 @@ check
 `docker compose exec api poetry run ruff format --check`  
 run  
 `docker compose exec api poetry run ruff format`  
+
+# migrate
+`docker compose exec api poetry run python -m src.migrate_db`  
+
+# seed
+`docker compose exec api poetry run python -m src.seeders.main`  

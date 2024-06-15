@@ -25,6 +25,10 @@ async def get_company_users(db: Session = Depends(get_db), company_id: int = 1):
 )
 async def get_company_users(db: Session = Depends(get_db), company_id: int = 1):
     company = fetch_company_users_with_join(db, company_id)
+
+    # companyはCompanyクラスのインスタンスなので、dictに変換してusersを追加する
     company_dict = company.__dict__
     company_dict["users"] = company.users
+
+    # joinedloadで一発で取得した際はリストで返ってくるので、同じになるようリストに変換して返す
     return {"data": [company]}

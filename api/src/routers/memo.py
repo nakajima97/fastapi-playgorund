@@ -14,9 +14,10 @@ async def get_memo(limit: int = 10, offset: int = 0, db: Session = Depends(get_d
     count = count_memos(db)
     return {"data": data, "count": count}
 
+
 @router.get("/company/{company_id}/memo")
 async def get_company_memo(company_id: int, db: Session = Depends(get_db)):
-    data = fetch_company_memos(db, company_id)
+    fetch_company_memos(db, company_id)
 
     return {"data": "data"}
     # return {"data": data}

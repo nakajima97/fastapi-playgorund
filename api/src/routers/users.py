@@ -1,8 +1,15 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
 
+from src.cruds.fetch_company_users import fetch_company_users_with_joinedload
+from src.db import get_db
 
 router = APIRouter()
 
-@router.get("/company/users")
-async def get_company_users():
-    return {"message": "Get company users"}
+company_user_tag = "/company/users"
+
+@router.get("/company/users/joinload", tags=[company_user_tag], description="joinedloadを使って会社のユーザーを取得します。")
+async def get_company_users(db: Session = Depends(get_db), company_id: int = 1):
+    users = fetch_company_users_with_joinedload(db, company_id)
+    return {"data": users}
+

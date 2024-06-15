@@ -8,12 +8,13 @@ from .company import company_count
 # fakerインスタンスを作成します
 fake = Faker("jp-JP")
 
+user_count = 100
 
 def user_seeder():
     # SQLAlchemy sessionを作成します
     with Session(db_engine) as session:
         # 100回ループします
-        for _ in range(100):
+        for _ in range(user_count):
             # ダミーデータを生成します
             fake_user = User(
                 name=fake.name(), company_id=fake.random_int(min=1, max=company_count)

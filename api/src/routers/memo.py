@@ -71,13 +71,4 @@ async def get_company_memo_with_joinedload_filter(
 ):
     company = fetch_company_memos_with_join_filter(db, company_id, start_date, end_date)
 
-    users = company[0].users
-    company_dict = company[0].__dict__
-    company_dict["users"] = []
-
-    for user in users:
-        user_dict = user.__dict__
-        user_dict["memos"] = user.memos
-        company_dict["users"].append(user_dict)
-
-    return {"data": [company_dict]}
+    return {"data": company}

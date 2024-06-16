@@ -4,9 +4,9 @@ from .user import user_seeder
 
 
 def main():
-    memo_seeder()
     company_seeder()
     user_seeder()
+    memo_seeder()
 
 
 if __name__ == "__main__":

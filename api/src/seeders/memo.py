@@ -18,7 +18,7 @@ def memo_seeder():
             fake_memo = Memo(
                 content=fake.text(),
                 user_id=fake.random_int(1, user_count),
-                created_at=fake.date_between(start_date="-6m", end_date="today"),
+                created_at=fake.date_between(start_date="-1y", end_date="today"),
             )
 
             # データをテーブルに挿入します

@@ -30,7 +30,7 @@ def fetch_company_memos_with_join(db: Session, company_id: int):
     return company
 
 def fetch_company_memos_with_join_filter(db: Session, company_id: int, start_date: datetime = None, end_date: datetime = None):
-    """joinを使ってメモの一覧を取得する関数
+    """joinを使ってメモの一覧を取得する関数。日付で絞り込みが可能。
     """
 
     query = db.query(company_model).join(company_model.users).join(user_model.memos)\

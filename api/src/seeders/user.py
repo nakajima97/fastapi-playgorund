@@ -10,6 +10,7 @@ fake = Faker("jp-JP")
 
 user_count = 100
 
+
 def user_seeder():
     # SQLAlchemy sessionを作成します
     with Session(db_engine) as session:

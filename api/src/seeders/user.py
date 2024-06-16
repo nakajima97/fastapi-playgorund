@@ -8,7 +8,7 @@ from .company import company_count
 # fakerインスタンスを作成します
 fake = Faker("jp-JP")
 
-user_count = 100
+user_count = 50
 
 def user_seeder():
     # SQLAlchemy sessionを作成します

@@ -9,4 +9,4 @@ class Memo(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
     content = Column(Text)
-    created_at = Column(DateTime)
+    created_at = Column(DateTime, index=True)

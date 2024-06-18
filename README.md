@@ -12,6 +12,8 @@ run
 `docker compose exec api poetry run ruff format`  
 
 # migrate
+`docker compose exec api poetry run alembic upgrade head`  
+or  
 `docker compose exec api poetry run python -m src.migrate_db`  
 
 # seed

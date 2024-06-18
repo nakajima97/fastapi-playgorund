@@ -1,1 +1,1 @@
-extend-exclude = ["base.py"]
+extend-exclude = ["base.py", "alembic/*"]

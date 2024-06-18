@@ -13,8 +13,6 @@ run
 
 # migrate
 `docker compose exec api poetry run alembic upgrade head`  
-or  
-`docker compose exec api poetry run python -m src.migrate_db`  
 
 # seed
 `docker compose exec api poetry run python -m src.seeders.main`  
